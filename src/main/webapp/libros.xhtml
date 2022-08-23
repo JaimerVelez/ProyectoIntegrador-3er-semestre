@@ -15,16 +15,13 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-        <ui:composition template="libros.xhtml"> 
-            <ui:define name="windowsTitle">#{msgs.planetariumTitle}
+       <ui:composition template="libros.xhtml"> 
+            <ui:define name="windowsTitle">#{msgs.planetariumTitle}</ui:define>
                 <ui:define name="content">
                     <h:form id="frmEstudiante">
                         <p:panel id="pIngreso" header="ingresoLibro" toggleable="true" closable="true" toggleSpeed="500" closeSpeed="500" widgetVar="panelInput" style="margin-bottom:20px">
                             <p:panelGrid columns="2">
-                                <p:panel id="basic" header="Libros" footer="Movie Details" style="margin-bottom:20px">
-                                    <h:panelGrid columns="2" cellpadding="10">
-                                        <p:graphicImage name="demo/images/misc/kobe.png" />
-                                        <div>Libros</div>
+
                                         <p:outputLabel id="olidLibros" value="idLibros"> </p:outputLabel>
                                         <p:inputText id="itidLibros" value="#{librocore}"></p:inputText>
 
@@ -51,7 +48,7 @@ and open the template in the editor.
 
                                         <p:outputLabel id="olresponsableLibro" value="responsableLibro"> </p:outputLabel>
                                         <p:inputText id="itresponsableLibro" value="#{librocore}"></p:inputText>
-
+                                        </p:panelGrid>
                                         <p:commandButton id="cbGuardar" icon="fa fa-save" value="Guardar" action="#{librocore.insertarEstudiante()}"></p:commandButton>
                                         <p:commandButton id="cbActualizar" value="Actualizar"></p:commandButton>
                                         <p:commandButton id="cbLimpiar" value="Limpiar"></p:commandButton>
@@ -71,7 +68,7 @@ and open the template in the editor.
                                     </p:dataTable>
                                 </p:panel>
 
-                        </p:panel>
+                       
                     </h:form>
                 </ui:define>
         </ui:composition>
