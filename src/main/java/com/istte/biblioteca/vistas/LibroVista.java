@@ -51,7 +51,8 @@ public class LibroVista implements Serializable{
     nuevoLibros.setEstadoLibro(estadoLibro);
     nuevoLibros.setResponsableLibro(responsableLibro);
       
-   
+   libroControlador = new LibroControladorImpl();
+   libroControlador.createLibro(nuevoLibros);
   
     
     
@@ -145,10 +146,23 @@ public class LibroVista implements Serializable{
         this.responsableLibro = responsableLibro;
     }
 
-    @Override
-    public String toString() {
-        return "bibliotecaVista{" + "idLibros=" + idLibros + ", isbnLibro=" + isbnLibro + ", categoriaLibro=" + categoriaLibro + ", tituloLibro=" + tituloLibro + ", autorLibro=" + autorLibro + ", editorialLibro=" + editorialLibro + ", temaLibro=" + temaLibro + ", cantidadLibro=" + cantidadLibro + ", perchaLibro=" + perchaLibro + ", estadoLibro=" + estadoLibro + ", responsableLibro=" + responsableLibro + '}';
+    public ILibroControlador getLibroControlador() {
+        return libroControlador;
     }
+
+    public void setLibroControlador(ILibroControlador libroControlador) {
+        this.libroControlador = libroControlador;
+    }
+
+    public Libro getNuevoLibros() {
+        return nuevoLibros;
+    }
+
+    public void setNuevoLibros(Libro nuevoLibros) {
+        this.nuevoLibros = nuevoLibros;
+    }
+
+   
     
     
 }
